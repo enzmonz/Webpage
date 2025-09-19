@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projects | My Portfolio</title>
+  <link rel="stylesheet" href="CSSFiles/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="Carousel/f5.png">
+  <style>
+ 
+    .container {
+      max-width: 950px;
+      margin: 32px auto 0 auto;
+      padding: 0;
+      border-left: 3px solid #066f08;
+      border-right: 3px solid #1bcf3f;
+      background: linear-gradient(135deg, var(--card), var(--bg));
+      border-radius: 18px;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+    }
+
+    @media (max-width: 1000px) {
+      .container {
+        max-width: 98vw;
+        padding: 16px 4vw;
+        border-left: 1.5px solid #3b4252;
+        border-right: 1.5px solid #3b4252;
+      }
+    }
+    section {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding-top: 100px;
+    }
+    .ow {
+      list-style: none;
+    }
+    .responsive {
+    max-width: 100%;   
+    height: auto;      
+    display: block;   
+    border-radius: 12px; 
+    }
+
+  h2 {
+  margin: 20px 0;      
+  text-align: center;  
+}
+.proj{
+  color:#24b810;
+  text-align: center;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;          
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;                  
+  display: flex;
+  align-items: center;      
+  justify-content: center;   
+  padding: 40px 0;
+}
+
+.resume-shell {
+  width: min(900px, 95%);
+  background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  box-shadow:
+    0 10px 30px rgba(0,0,0,.35),
+    inset 0 1px 0 rgba(255,255,255,.06);
+}
+.resume-shell > section {
+  padding-top: 5px;
+  margin-top: 0;
+}
+.resume-header {
+margin-top: 0;
+padding-top: 8px;
+display: flex;
+gap: 16px;
+align-items: center;
+padding: 20px 24px;
+background: rgba(255,255,255,0.02);
+border-bottom: 1px solid var(--border);
+position: flex; 
+top: 0;
+z-index: 1;
+backdrop-filter: blur(6px);
+}
+.avatar {
+width: 56px; height: 56px; flex: 0 0 auto;
+border-radius: 50%;
+background: linear-gradient(135deg, var(--accent), #5cf673);
+display: grid; place-items: center;
+color: #0a0a0a; font-weight: 800;
+border: 2px solid rgba(255,255,255,.25);
+text-transform: uppercase;
+}
+
+.project-overview-card {
+  width: 100%;
+  max-width: 800px; 
+  margin: 24px auto;
+}
+
+.headings { flex: 1; min-width: 0; }
+.name { font-size: clamp(18px, 2.4vw, 24px); font-weight: 800; letter-spacing: .3px; }
+.role { color: var(--muted); font-size: 14px; margin-top: 2px; }
+</style>
+</head>
+<body>
+  <header>
+
+    <div class="navbar" role="navigation" aria-label="Main">
+      <h1 class="logo">EnzMonz <span>PORTFOLIO</span></h1>
+      <input type="checkbox" id="menu-toggle">
+    <label for="menu-toggle" class="hamburger">☰</label>
+     <nav>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li class="dropdown">
+      <a href="about.html">About Me ▾</a>
+      <ul class="dropdown-content">
+        <li><a href="resume.html">Resume</a></li>
+        <li><a href="acad.html">Academic Achievements</a></li>
+        <li><a href="prof.html">Professional Experience</a></li>
+      </ul>
+    </li>
+    <li><a href="project.html"class="active">Projects</a></li>
+    <li><a href="skill.html">Skills</a></li>
+    <li><a href="gallery.html">Gallery/Showcase</a></li>
+    <li><a href="contact.html">Contact Me</a></li>
+  </ul>
+</nav>
+    </div>
+
+  </header>
+  
+  <div class="container">
+    <main>
+      <div class="resume-shell">
+    <header class="resume-header">
+      <div class="avatar" aria-hidden="true">EM</div>
+      <div class="headings">
+        <div class="name">Enzo Monzon</div>
+        <div class="role">Computer Science Student · </div>
+      </div>
+    </header>
+  
+      <section>
+  <div class="grid grid-2">
+    
+    <article class="card socials-card">
+      <div class="card-text">
+        <h2 class="proj">Project Motivation</h2>
+        <p><strong>Marcus Enzo H. Monzon</strong> I make Projects
+        to learn more about the world of programming. using C language to code my first ever project, it calculates and saves the expenses i do in my daily basis. 
+        it uses if and else statements and loops with heavyy conditionals thats serves my
+        foundation for my first year in programming.</p>
+      </div>
+    </article>
+    <article class="card socials-card" style="margin-top: 24px;">
+      <div class="card-text">
+        <h2 class="proj">Learning Reflection</h2>
+        <p>Learning HTML and CSS has been a great experience for me. I learned that HTML gives a website its structure, while CSS adds design and style to that structure. By creating layouts, trying out different colors, and making my designs responsive, I developed both technical and creative skills.</p>
+      </div>
+    </article>
+  </div>
+</section>
+  <article class="card socials-card project-overview-card">
+   <h2 class="proj">Project Overviews</h2>
+  <div class="socmed-container">
+          <p>Click the image to use program.</p>
+        <div class="grid grid-3">
+          <article class="card">
+            <a href="proj1.html"><img class="responsive" src="Asset/clang.jpg" alt="Project 1 screenshot"></a>
+            <p>Expense Tracker Using C Language.</p>
+          </article>
+          
+
+  <article class="card socials-card">
+     <div class="socmed-container">
+     <div class="grid grid-3">
+          <article class="card">
+            <a href="https://monzon-emtech.onrender.com/"><img class="responsive" src="Asset/website.jpg" alt="Project 1 screenshot"></a>
+            <p>Click this image to access my  2024 Website Project.</p>
+          </article>
+          
+    </main> 
+
+  </div> 
+   <footer>
+      <p>&copy; Introduction to Computing in HTML &amp; CSS</p>
+      <p>
+        <a href="https://github.com/enzmonz" target="_blank" rel="noopener">GitHub</a> •
+        <a href="https://www.linkedin.com/in/enzmonz/" target="_blank" rel="noopener">LinkedIn</a>
+      </p>
+    </footer>
+</body>
+</html>
