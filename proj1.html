@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home | My Portfolio</title>
+  <link rel="stylesheet" href="CSSFiles/style.css">
+  <link rel="stylesheet" href="CSSFiles/resume.css">
+  <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="Carousel/f5.png">
+  <style>
+    pre {
+  background: #0f172a;  
+  color: #e5e7eb;       
+  padding: 16px;
+  border-radius: 12px;
+  overflow-x: auto;      
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+  </style>
+</head>
+<body>
+  <header>
+
+    <div class="navbar" role="navigation" aria-label="Main">
+      <h1 class="logo">EnzMonz <span>PORTFOLIO</span></h1>
+      <input type="checkbox" id="menu-toggle">
+    <label for="menu-toggle" class="hamburger">☰</label>
+         <nav>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li class="dropdown">
+      <a href="about.html">About Me ▾</a>
+      <ul class="dropdown-content">
+        <li><a href="resume.html">Resume</a></li>
+        <li><a href="acad.html">Academic Achievements</a></li>
+        <li><a href="prof.html">Professional Experience</a></li>
+      </ul>
+    </li>
+    <li><a href="project.html"class="active">Projects</a></li>
+    <li><a href="skill.html">Skills</a></li>
+    <li><a href="gallery.html">Gallery/Showcase</a></li>
+    <li><a href="contact.html">Contact Me</a></li>
+  </ul>
+</nav>
+    </div>
+
+  </header>
+  
+  <div class="container">
+    <main>
+      <div class="resume-shell">
+    <header class="resume-header">
+      <div class="avatar" aria-hidden="true">EM</div>
+      <div class="headings">
+        <div class="name">Enzo Monzon</div>
+        <div class="role">Computer Science Student · </div>
+      </div>
+    </header>
+      <section>
+  <div class="grid grid-2">
+      <div class="card-text">
+     <h2 class="proj">Here’s My C Language Code – Copy it and use it on your own!</h2>
+<button class="btn" onclick="copyCode()">📋 Copy Code</button>
+<pre><code id="c-code">
+#include &lt;stdio.h&gt;
+
+struct pera {
+    char pepito[100];
+} pera;
+
+int main(void)
+{
+    printf("\n\nWelcome to The Money Watcher.\n");
+    printf("\n\nWelcome to Enzzmonzz Money Watcher where I create a simple expense tracker and a budget calculator. Follow the instructions below to move forward.\n");
+    printf("Enter 1 to use Add.\nEnter 2 to use View.\nEnter 3 to use Delete.\nEnter 4 to use Exit.\n\n");
+
+    printf("Add(1)\nView(2)\nDelete(3)\nExit(4)\n\n");
+
+    int get_int;
+    int redo;
+
+    printf("ENTER ZA NUMBAH: ");
+    scanf("%i", &get_int);
+
+    switch (get_int)
+    {
+        case 1: {
+            FILE *viewPtr = fopen("record.txt", "a");
+
+            if (viewPtr == NULL) {
+                printf("Could not open record.txt\n");
+                return 1;
+            }
+
+            printf("\nWELCOME TO ADD YO SHI\n");
+
+            float budget;
+
+            while (1)
+            {
+                printf("What's your Budget:\n> ");
+                redo = scanf("%f", &budget);
+
+                if (redo == 1) {
+                    break; 
+                }
+
+                while (getchar() != '\n');
+                printf("Invalid input. Please enter a number.\n");
+            }
+
+            float expense;
+            float totalexpense = 0;
+
+            printf("\nEnter your expenses (type 0 to finish):\n");
+
+            for (int i = 0; i < 10; i++)
+            {
+                while (1)
+                {
+                    printf("Expense %d: ", i + 1);
+                    redo = scanf("%f", &expense);
+
+                    if (redo == 1)
+                        break;
+
+                    while (getchar() != '\n');
+                    printf("Invalid input. Please enter a number.\n");
+                }
+
+                if (expense == 0.0)
+                {
+                    break;
+                }
+                totalexpense += expense;
+                budget -= expense;
+            }
+
+            printf("\nBudget Left: P%.2f\n", budget);
+
+            if (budget < 0) {
+                printf("Overbudget!\n\n");
+            } else {
+                printf("On Budget.\n");
+            }
+
+            printf("Expenses: P%.2f\n", totalexpense);
+
+            fprintf(viewPtr, "Budget Left: %.2f\n", budget);
+            fclose(viewPtr);
+            break;
+        }
+
+        case 2: {
+            FILE *fptr = fopen("record.txt", "r");
+            char myString[100];
+
+            if (fptr != NULL) {
+                while (fgets(myString, 100, fptr)) {
+                    printf("%s", myString);
+                }
+                fclose(fptr);
+            } else {
+                printf("NO FILEE");
+            }
+            printf("This All The Records Gang\n\n");
+            break;
+        }
+
+        case 3: {
+            int del; 
+            printf("\n\nThis will delete the Whole Record. Use 1 for Yes and 0 to Cancel: ");
+            scanf("%i", &del);
+
+            switch(del) {
+                case 1:
+                    printf("Data Deleted");
+                    FILE *fptr = fopen("record.txt", "w");
+                    fclose(fptr);
+                    break;
+                case 0:
+                    printf("Data will Not Be Deleted\n");
+                    break;
+                default:
+                    printf("\nTry Again\n");
+            }
+            break;
+        }
+
+        case 4:
+            printf("\nRUN ME AGAIN IF U BROKIE....\n");
+            break;
+
+        default:
+            printf("Option Is 1 to 4");
+    }
+
+    return 0;
+}
+</code></pre>
+      </div>
+    </article>
+
+    </main> 
+  
+  </div> 
+   <footer>
+      <p>&copy; Introduction to Computing in HTML &amp; CSS</p>
+      <p>
+        <a href="https://github.com/enzmonz" target="_blank" rel="noopener">GitHub</a> •
+        <a href="https://www.linkedin.com/in/enzmonz/" target="_blank" rel="noopener">LinkedIn</a>
+      </p>
+    </footer>
+</body>
+</html>
